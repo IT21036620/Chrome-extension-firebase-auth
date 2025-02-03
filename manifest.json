@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "FireAuth",
+    "version": "1.0",
+    "description": "Simple chrome extention that use firebase Authentication",
+    "permissions": ["contextMenus", "scripting", "storage", "activeTab","tabs"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+      "default_popup": "pages/Login_popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["firebase-config.js", "content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; connect-src 'self' https://firestore.googleapis.com; object-src 'self'"
+    }
+  }
+  
