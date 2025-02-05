@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Firebase Auth & Name Extension</title>
-    <!-- Load the local Google API script -->
-    <script src="api.js"></script>
-    <!-- Load Firebase SDKs from local files -->
-    <script src="firebase-app-compat.js"></script>
-    <script src="firebase-auth-compat.js"></script>
-    <script src="firebase-firestore-compat.js"></script>
+    <meta charset="UTF-8">
+    <title>Firebase Chrome Extension</title>
+    <style>
+      body { font-family: sans-serif; margin: 10px; }
+      button { margin: 5px; }
+    </style>
   </head>
   <body>
-    <h1>Firebase Auth & Name Extension</h1>
+    <h1>Firebase Extension</h1>
     <div id="authSection">
       <button id="loginBtn">Sign In with Google</button>
       <button id="logoutBtn" style="display:none;">Sign Out</button>
     </div>
-    <!-- Name Section: Visible only when user is signed in -->
     <div id="nameSection" style="display:none; margin-top: 10px;">
-      <input type="text" id="nameInput" placeholder="type name" />
+      <input type="text" id="nameInput" placeholder="type name">
       <button id="saveNameBtn">Save Name</button>
     </div>
-    <!-- Your custom JavaScript -->
-    <script src="popup.js"></script>
+    <!-- Reference the bundled JavaScript file -->
+    <script src="dist/bundle.js"></script>
   </body>
 </html>
